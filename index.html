@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Pak Wanto React Menambah dan Mengurangi Skor</title>
+  <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function Counter() {
+      const [score, setScore] = React.useState(0);
+
+      // Fungsi untuk menambah score
+      const incrementScore = () => setScore(score + 1);
+
+      // Fungsi untuk mengurangi score
+      const decrementScore = () => setScore(score - 1);
+
+      // Fungsi untuk mereset score ke nol
+      const resetScore = () => setScore(0);
+
+      return (
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <h1>Tugas Pak Wanto React JS</h1>
+        <h1>Score: {score}</h1>
+        <button onClick={incrementScore} style={{ marginRight: '10px' }}>+</button>
+        <button onClick={decrementScore} style={{ marginRight: '10px' }}>-</button>
+        <button onClick={resetScore}>Reset</button>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<Counter />, document.getElementById('root'));
+  </script>
+</body>
+</html>
